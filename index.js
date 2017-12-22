@@ -25,7 +25,7 @@ app.get('/cool', function(request, response) {
 });
 
 app.get('/DataBase', function(request, response) {
-  response.send(process.env.DATABASE_URL);
+  response.send(process.env.DATABASE_URL + process.env.TIMES);
 });
 
 app.listen(app.get('port'), function() {
