@@ -32,11 +32,16 @@ app.listen(app.get('port'), function() {
   console.log('Node app is running on port', app.get('port'));
 });
 
-app.get('/times', function(request, response) {
-    var result = ''
-    var times = process.env.TIMES || 5
-    for (i=0; i < times; i++)
-      result += i + ' ';
+app.get('/sum', function(request, response) {
+    var result = '0'
+	var val = 0
+    var amount = process.env.TIMES || 5
+    for (i=1; i < amount; i++)
+	{
+      result += ' + ' + i;
+	  val += i;
+	}
+	  result += ' = ' + val;
   response.send(result);
 });
 
